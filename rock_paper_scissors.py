@@ -1,5 +1,20 @@
 import random
 
+
+def question_check(questions):
+    if questions == 'no':
+        if computer_score > player_score:
+            print('Now you lose, but next time you will win!')
+        elif computer_score == player_score:
+            print('You are draw!\nGood luck next time!')
+        else:
+            print('You win the game, MONSTER!')
+        exit(0)
+    else:
+        print('Wrong choice! Good bye!')
+        exit(0)
+
+
 rock = 'rock'
 paper = 'paper'
 scissors = 'scissors'
@@ -41,18 +56,8 @@ while player_movie != 'exit':
         if question == 'yes':
             player_movie = input('Choice [r]ock, [p]aper, [s]cissors: ')
             continue
-        elif question == 'no':
-            if computer_score > player_score:
-                print('Now you lose, but next time you will win!')
-            elif computer_score == player_score:
-                print('You are draw!\nGood luck next time!')
-            else:
-                print('You win the game, MONSTER!')
-            exit(0)
         else:
-            print('Wrong choice! Good bye!')
-            exit(0)
-
+            question_check(question)
     elif (player_movie == rock and computer_movie == paper) or \
             (player_movie == scissors and computer_movie == rock) or \
             (player_movie == paper and computer_movie == scissors):
@@ -63,18 +68,8 @@ while player_movie != 'exit':
         if question == 'yes':
             player_movie = input('Choice [r]ock, [p]aper, [s]cissors: ')
             continue
-        elif question == 'no':
-            if computer_score > player_score:
-                print('Now you lose, but next time you will win!')
-            elif computer_score == player_score:
-                print('You are draw!\nGood luck next time!')
-            else:
-                print('You win the game, MONSTER!')
-            exit(0)
         else:
-            print('Wrong choice! Good bye!')
-            exit(0)
-
+            question_check(question)
     elif (player_movie == rock and computer_movie == rock) or \
             (player_movie == scissors and computer_movie == scissors) or \
             (player_movie == paper and computer_movie == paper):
@@ -86,16 +81,7 @@ while player_movie != 'exit':
         if question == 'yes':
             player_movie = input('Choice [r]ock, [p]aper, [s]cissors: ')
             continue
-        elif question == 'no':
-            if computer_score > player_score:
-                print('Now you lose, but next time you will win!')
-            elif computer_score == player_score:
-                print('You are draw!\nGood luck next time!')
-            else:
-                print('You win the game, MONSTER!')
-            exit(0)
         else:
-            print('Wrong choice! Good bye!')
-            exit(0)
+            question_check(question)
 if player_movie == 'exit':
     print('Thank you for the game!\nSee you next time!')
